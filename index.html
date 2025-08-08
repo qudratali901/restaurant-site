@@ -3,85 +3,119 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width" />
-  <title>Afghani Wraps — Starter Clone</title>
-  <meta name="description" content="Static starter for your restaurant site." />
-  <meta property="og:title" content="Afghani Wraps — Starter Clone" />
-  <meta property="og:description" content="Static starter for your restaurant site." />
-  <meta property="og:image" content="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='600'%3E%3Crect width='100%25' height='100%25' fill='%23ddd'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%23666' font-family='Arial' font-size='48'%3E1200x600 OG Placeholder%3C/text%3E%3C/svg%3E" />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='110' height='110'%3E%3Crect width='100%25' height='100%25' fill='%23f8bb0a'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%2300308d' font-family='Arial' font-size='26'%3ELOGO%3C/text%3E%3C/svg%3E" type="image/svg+xml" />
-  <meta name="theme-color" content="#00308d"/>
+  <title>AFGHAN HOUSE — Static Clone (Placeholders)</title>
+  <meta name="description" content="Static clone with image placeholders." />
+  <meta name="theme-color" content="#00308d" />
+
+  <!-- Fonts similar to original -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
   <style>
-    :root{ --brand-bg:#00308d; --brand-accent:#f8bb0a; --text:#111; }
-    *{box-sizing:border-box} html,body{margin:0} body{font-family:Arial,sans-serif;color:var(--text)}
-    .alert-msg{background:var(--brand-accent);padding:.6rem 1rem;text-align:center;font-weight:700}
-    .topbar{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:1rem;padding:1rem;border-bottom:1px solid #eee}
+    :root {
+      --bg:#00308d;           /* brand background */
+      --accent:#f8bb0a;       /* brand accent */
+      --text:#111;
+      --muted:#666;
+      --chip-b:#00000022;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0}
+    body{font-family:Poppins,system-ui,Segoe UI,Roboto,Arial,sans-serif;color:var(--text);background:#fff}
+
+    /* top alert */
+    .alert-msg{background:var(--accent);padding:.6rem 1rem;text-align:center;font-weight:700}
+
+    /* header row: [left actions] [logo] [right actions] */
+    .topbar{background:#fff;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:.75rem;padding:.5rem 1rem;border-bottom:1px solid #eee}
+    .topbar .left,.topbar .right{display:flex;gap:.5rem;align-items:center}
+    .btn{background:var(--bg);color:#fff;border:none;border-radius:.5rem;padding:.45rem .7rem;font-weight:600;cursor:pointer}
     .logo{display:flex;justify-content:center}
     .logo img{width:110px;height:110px;border-radius:50%;object-fit:cover;outline:3px solid #eee}
-    .contact{display:flex;gap:.5rem;justify-content:flex-end}
-    .btn{background:var(--brand-bg);color:#fff;border:none;border-radius:.4rem;padding:.5rem .8rem;cursor:pointer}
-    .banner{border-top:4px solid #eee;border-bottom:4px solid #eee}
-    .carousel{position:relative;aspect-ratio:2.6/1;background:#ddd}
-    .slide{position:absolute;inset:0;opacity:0;transition:opacity .3s}
+
+    /* hero/carousel */
+    .banner{position:relative}
+    .carousel{position:relative;width:100%;aspect-ratio:2.6/1;background:#ddd;overflow:hidden}
+    .slide{position:absolute;inset:0;opacity:0;transition:opacity .35s ease}
     .slide.active{opacity:1}
     .slide img{width:100%;height:100%;object-fit:cover}
     .carousel-btn{position:absolute;top:50%;transform:translateY(-50%);border:none;border-radius:999px;width:40px;height:40px;background:rgba(0,0,0,.4);color:#fff;cursor:pointer}
     .carousel-btn.prev{left:.5rem}.carousel-btn.next{right:.5rem}
-    .category-bar{background:var(--brand-accent);padding:.6rem;display:flex;gap:.5rem;overflow:auto;border-bottom:1px solid #e2e2e2}
-    .chip{background:#fff;border:1px solid #0001;border-radius:.5rem;padding:.45rem .7rem;white-space:nowrap}
+    .payments{display:flex;justify-content:center;align-items:center;padding:1rem;border-top:1px dashed #e6e6e6}
+
+    /* category navbar — rectangle chips */
+    .category-bar{background:var(--accent);padding:.6rem;display:flex;gap:.5rem;overflow:auto}
+    .chip{background:#fff;border:1px solid var(--chip-b);border-radius:.5rem;padding:.45rem .7rem;white-space:nowrap}
+
+    /* search */
     .container{max-width:1100px;margin:0 auto;padding:0 1rem}
-    .search{margin:1rem auto;display:flex;gap:.5rem}
+    .search{margin:1rem 0;display:flex;gap:.5rem}
     .search input{flex:1;padding:.6rem .8rem;border:1px solid #0002;border-radius:.5rem}
     .search .back{border:1px solid #0002;background:#fff;border-radius:.5rem;padding:.5rem .7rem;cursor:pointer}
-    .payments{display:flex;justify-content:center;align-items:center;padding:1rem;border-top:1px dashed #ddd}
-    footer{background:var(--brand-bg);color:#fff;text-align:center;padding:2rem 1rem;margin-top:2rem}
-    .debug{outline:2px dashed #f0f} /* helps us SEE sections */
+
+    /* footer */
+    footer{background:var(--bg);color:#fff;text-align:center;padding:2rem 1rem;margin-top:2rem}
+    .fs-08{font-size:.95rem}
+
+    /* simple responsiveness */
+    @media (max-width:768px){
+      .logo img{width:84px;height:84px}
+    }
   </style>
 </head>
 <body>
+  <!-- top alert like original -->
   <div class="alert-msg">Our timings are 3 PM till 2:45 AM</div>
 
-  <div class="topbar debug">
-    <div></div>
-    <div class="logo">
-      <img alt="Restaurant logo"
-           src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='110' height='110'%3E%3Crect width='100%25' height='100%25' rx='10' ry='10' fill='%23f8bb0a'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%2300308d' font-family='Arial' font-size='20'%3E110x110%3C/text%3E%3C/svg%3E">
-    </div>
-    <div class="contact">
+  <!-- header -->
+  <div class="topbar">
+    <div class="left">
       <button class="btn" type="button">📍 Location</button>
+    </div>
+    <div class="logo">
+      <!-- placeholder logo (no external file) -->
+      <img alt="Logo"
+           src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='110' height='110'%3E%3Crect width='100%25' height='100%25' rx='14' ry='14' fill='%23f8bb0a'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%2300308d' font-family='Arial' font-size='20'%3ELOGO%3C/text%3E%3C/svg%3E">
+    </div>
+    <div class="right">
       <a class="btn" href="tel:+923019717553">📞 0301 9717553</a>
+      <button class="btn" type="button">🛒 Cart (0)</button>
     </div>
   </div>
 
-  <section class="banner debug">
+  <!-- hero / slider with 4 placeholder banners -->
+  <section class="banner">
     <div class="carousel" id="carousel">
       <div class="slide active">
-        <img alt="banner 1"
-          src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1920' height='740'%3E%3ClinearGradient id='g'%3E%3Cstop stop-color='%2300308d'/%3E%3Cstop offset='1' stop-color='%23f8bb0a'/%3E%3C/linearGradient%3E%3Crect width='100%25' height='100%25' fill='url(%23g)'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='white' font-family='Arial' font-size='48'%3EBanner 1 Placeholder%3C/text%3E%3C/svg%3E">
+        <img alt="Banner 1"
+          src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1920' height='740'%3E%3ClinearGradient id='g'%3E%3Cstop stop-color='%2300308d'/%3E%3Cstop offset='1' stop-color='%23f8bb0a'/%3E%3C/linearGradient%3E%3Crect width='100%25' height='100%25' fill='url(%23g)'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='white' font-family='Arial' font-size='46'%3EBanner 1 Placeholder%3C/text%3E%3C/svg%3E">
       </div>
       <div class="slide">
-        <img alt="banner 2"
-          src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1920' height='740'%3E%3Crect width='100%25' height='100%25' fill='%23ddd'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%23666' font-family='Arial' font-size='48'%3EBanner 2%3C/text%3E%3C/svg%3E">
+        <img alt="Banner 2"
+          src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1920' height='740'%3E%3Crect width='100%25' height='100%25' fill='%23ddd'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%23666' font-family='Arial' font-size='46'%3EBanner 2%3C/text%3E%3C/svg%3E">
       </div>
       <div class="slide">
-        <img alt="banner 3"
-          src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1920' height='740'%3E%3Crect width='100%25' height='100%25' fill='%23ccc'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%23555' font-family='Arial' font-size='48'%3EBanner 3%3C/text%3E%3C/svg%3E">
+        <img alt="Banner 3"
+          src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1920' height='740'%3E%3Crect width='100%25' height='100%25' fill='%23ccc'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%23555' font-family='Arial' font-size='46'%3EBanner 3%3C/text%3E%3C/svg%3E">
       </div>
       <div class="slide">
-        <img alt="banner 4"
-          src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1920' height='740'%3E%3Crect width='100%25' height='100%25' fill='%23bbb'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%23444' font-family='Arial' font-size='48'%3EBanner 4%3C/text%3E%3C/svg%3E">
+        <img alt="Banner 4"
+          src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1920' height='740'%3E%3Crect width='100%25' height='100%25' fill='%23bbb'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%23444' font-family='Arial' font-size='46'%3EBanner 4%3C/text%3E%3C/svg%3E">
       </div>
       <button class="carousel-btn prev" aria-label="Previous" id="prev">&#10094;</button>
       <button class="carousel-btn next" aria-label="Next" id="next">&#10095;</button>
     </div>
 
+    <!-- payment strip placeholder -->
     <div class="payments">
-      <img alt="Payment methods" width="96" height="30"
-        src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='96' height='30'%3E%3Crect width='100%25' height='100%25' fill='%23eee'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%23666' font-family='Arial' font-size='10'%3ECards%3C/text%3E%3C/svg%3E">
+      <img alt="Payment methods" width="128" height="40"
+        src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='128' height='40'%3E%3Crect width='100%25' height='100%25' fill='%23eee'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%23666' font-family='Arial' font-size='12'%3ECards%20Image%3C/text%3E%3C/svg%3E">
     </div>
   </section>
 
-  <nav class="category-bar debug">
+  <!-- category navbar -->
+  <nav class="category-bar">
     <div class="chip">Signature Wraps</div>
     <div class="chip">Burgers</div>
     <div class="chip">Fries</div>
@@ -89,25 +123,28 @@
     <div class="chip">Drinks</div>
   </nav>
 
-  <div class="container debug" style="padding:1rem 0">
+  <!-- search -->
+  <div class="container">
     <div class="search">
       <button class="back" type="button" aria-label="Back">←</button>
       <input type="text" placeholder="Search for item by title..." />
     </div>
-    <p style="color:#666">If you can read this paragraph, the whole page loaded correctly 🎉</p>
   </div>
 
   <footer>
     <div class="container">
-      <p>© <span id="year"></span> Your Restaurant — All rights reserved.</p>
+      <p class="fs-08">© <span id="year"></span> Your Restaurant — All rights reserved.</p>
     </div>
   </footer>
 
   <script>
+    // footer year
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // minimal carousel
     const slides = Array.from(document.querySelectorAll('.slide'));
     let i = 0;
-    const show = idx => slides.forEach((s, n) => s.classList.toggle('active', n === idx));
+    const show = idx => slides.forEach((s,n)=>s.classList.toggle('active', n===idx));
     document.getElementById('prev').onclick = () => { i = (i - 1 + slides.length) % slides.length; show(i); };
     document.getElementById('next').onclick = () => { i = (i + 1) % slides.length; show(i); };
   </script>
