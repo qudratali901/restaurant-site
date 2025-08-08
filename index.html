@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width" />
+  <title>Afghani Wraps — Starter Clone</title>
+  <meta name="description" content="Static starter for your restaurant site." />
+  <meta property="og:title" content="Afghani Wraps — Starter Clone" />
+  <meta property="og:description" content="Static starter for your restaurant site." />
+  <!-- Simple OG placeholder (data URL) — we'll replace later with a local file -->
+  <meta property="og:image" content="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='600'%3E%3Crect width='100%25' height='100%25' fill='%23ddd'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%23666' font-family='Arial' font-size='48'%3E1200x600 OG Placeholder%3C/text%3E%3C/svg%3E" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='110' height='110'%3E%3Crect width='100%25' height='100%25' fill='%23f8bb0a'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%2300308d' font-family='Arial' font-size='26'%3ELOGO%3C/text%3E%3C/svg%3E" type="image/svg+xml" />
+  <meta name="theme-color" content="#00308d"/>
+
+  <style>
+    :root{
+      --brand-bg:#00308d;
+      --brand-accent:#f8bb0a;
+      --text:#111;
+      --muted:#666;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0}
+    body{font-family:Poppins,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--text);background:#fff}
+
+    /* Top notice bar */
+    .alert-msg{
+      background:var(--brand-accent);
+      color:#111;
+      text-align:center;
+      padding:.5rem 1rem;
+      font-weight:600;
+    }
+
+    /* Header with logo + actions */
+    .topbar{
+      background:#fff;
+      display:grid;
+      grid-template-columns:1fr auto 1fr;
+      align-items:center;
+      gap:1rem;
+      padding:.75rem 1rem;
+    }
+    .logo{
+      display:flex; justify-content:center; align-items:center;
+    }
+    .logo img{
+      width:110px;height:110px;border-radius:50%;object-fit:cover
+    }
+    .contact{
+      display:flex; gap:.5rem; align-items:center; justify-content:flex-end;
+      font-weight:600;
+    }
+    .contact .btn{
+      background:var(--brand-bg); color:#fff; border:none; border-radius:.4rem;
+      padding:.5rem .75rem; cursor:pointer; font-size:.9rem;
+    }
+
+    /* Slider / banner */
+    .banner{
+      position:relative; overflow:hidden; background:#ddd;
+    }
+    .carousel{
+      position:relative; width:100%;
+      /* keep a wide aspect like the original */
+      aspect-ratio: 2.6 / 1;
+    }
+    .slide{
+      position:absolute; inset:0; width:100%; height:100%;
+      opacity:0; transition:opacity .4s ease;
+    }
+    .slide.active{opacity:1}
+    .slide img{width:100%; height:100%; object-fit:cover}
+
+    .carousel-btn{
+      position:absolute; top:50%; transform:translateY(-50%);
+      background:rgba(0,0,0,.4); color:#fff; border:none; border-radius:999px;
+      width:40px; height:40px; cursor:pointer;
+      display:flex; align-items:center; justify-content:center;
+    }
+    .carousel-btn.prev{left:.5rem}
+    .carousel-btn.next{right:.5rem}
+
+    /* Category bar like the original "rectangle" nav */
+    .category-bar{
+      background:var(--brand-accent);
+      padding:.5rem; display:flex; gap:.5rem; overflow:auto;
+    }
+    .chip{
+      background:#fff; color:#000; border:1px solid #00000022;
+      border-radius:.5rem; padding:.45rem .7rem; white-space:nowrap;
+      font-size:.9rem;
+    }
+
+    /* Search */
+    .container{max-width:1100px; margin:0 auto; padding:0 1rem}
+    .search{
+      margin:1rem auto; display:flex; gap:.5rem; align-items:center
+    }
+    .search input{
+      flex:1; padding:.6rem .8rem; border-radius:.5rem; border:1px solid #00000022;
+      font-size:1rem
+    }
+    .search .back{
+      border:1px solid #00000022; background:#fff;
+      border-radius:.5rem; padding:.55rem .7rem; cursor:pointer;
+    }
+
+    /* Payment strip */
+    .payments{display:flex; justify-content:center; align-items:center; padding:1rem}
+    .payments img{max-width:100%}
+
+    /* Footer */
+    footer{background:var(--brand-bg); color:#fff; text-align:center; padding:2rem 1rem}
+    .fs-08{font-size:.9rem}
+  </style>
+</head>
+<body>
+  <!-- top alert same text as the site -->
+  <div class="alert-msg">Our timings are 3 PM till 2:45 AM</div>
+
+  <!-- header with phone + logo -->
+  <div class="topbar">
+    <div></div>
+    <div class="logo">
+      <!-- TODO: replace with your real logo later -->
+      <img alt="Restaurant logo"
+           src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='110' height='110'%3E%3Crect width='100%25' height='100%25' rx='10' ry='10' fill='%23f8bb0a'/%3E%3
